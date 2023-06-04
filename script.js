@@ -9,73 +9,90 @@ navBtns.click(function() {
     $('main').toggle().slideDown();
     $('#navbar-widget').addClass('hidden');
 
-    navBtns.removeClass('dark:bg-gray-800');
-    $(this).addClass('dark:bg-gray-800');
+    navBtns.removeClass('bg-gray-800');
+    $(this).addClass('bg-gray-800');
 });
 
 $('header').click(function() {
-    $(this).slideUp('hidden');
+    $(this).slideUp();
+    $('#navbar').addClass('lg:hidden');
 });
 
 $('#navbar-btn').click(function() {
     $('#navbar-widget').toggleClass('hidden');
 });
 
+$('#intro-sec').click(function() {
+    $('#header').slideDown();
+    $('#page').slideUp();
+    $('#intro-sec').fadeOut();
+    setTimeout(function() {
+        $('#page').slideDown();
+        $('#navbar').removeClass('lg:hidden');
+        $('#about-sec').slideDown();
+        $('#about-btn').addClass('bg-gray-800');
+    }, 500);
+}); 
 
-// var aboutBtn = $('#about-btn');
-// var skillsBtn = $('#skills-btn');
-// var projectsBtn = $('#projects-btn');
-// var contactBtn = $('#contact-btn');
+function gallery() {
+    this.index = 0;
+    this.load = function() {
+        this.rootEl = document.querySelector(".gallery");
+        this.platform = this.rootEl.querySelector(".platform");
+        this.frames = this.platform.querySelectorAll(".each-frame");
+        this.contentArea = this.rootEl.querySelector(".content-area");
+        this.width = parseInt(this.rootEl.style.width);
+        this.limit = {
+            start: 0,
+            end: this.frames.length - 1
+        };
+        this.frames.forEach(each => {
+            each.style.width = this.width + "px";
+        });
+        this.goto(this.index);
+    }
+    this.set_title = function() {
+        this.rootEl.querySelector(".heading").innerText = this.frames[this.index].getAttribute("title");
+    }
+    this.next = function() {
+        this.platform.style.right = this.width * ++this.index + "px";
+        this.set_title();
+    }
+    this.prev = function() {
+        this.platform.style.right = this.width * --this.index + "px";
+        this.set_title();
+    }
+    this.goto = function(index) {
+        this.platform.style.right = this.width * index + "px";
+        this.index = index;
+        this.set_title();
+    }
+    this.load();
+}
+var G = new gallery();
+G.rootEl.addEventListener("click", function(t) {
+    var val = t.target.getAttribute("action");
+    if (val == "next" && G.index != G.limit.end) {
+        G.next();
+    }
+    if (val == "prev" && G.index != G.limit.start) {
+        G.prev();
+    }
+    if (val == "goto") {
+        let rv = t.target.getAttribute("goto");
+        rv = rv == "end" ? G.limit.end : rv;
+        G.goto(parseInt(rv));
+    }
+});
 
-// var aboutPage = $('#about-sec');
-// var skillsPage = $('#skills-sec');
-// var projectsPage = $('#projects-sec');
-// var contact = $('#contact-sec');
+$(document).on("keyup", function(t) {
+    var val = t.keyCode;
+    if (val == 39 && G.index != G.limit.end) {
+        G.next();
+    }
+    if (val == 37 && G.index != G.limit.start) {
+        G.prev();
+    }
+});
 
-// aboutBtn.click(function(){
-//     aboutPage.show();
-//     skillsPage.hide();
-//     projectsPage.hide();
-//     contact.hide();
-
-//     $(this).addClass('dark:bg-gray-800');
-//     skillsBtn.removeClass('dark:bg-gray-800');
-//     projectsBtn.removeClass('dark:bg-gray-800');
-//     contactBtn.removeClass('dark:bg-gray-800');
-// });
-
-// skillsBtn.click(function(){
-//     aboutPage.hide();
-//     skillsPage.show();
-//     projectsPage.hide();
-//     contact.hide();
-
-//     aboutBtn.removeClass('dark:bg-gray-800');
-//     $(this).addClass('dark:bg-gray-800');
-//     projectsBtn.removeClass('dark:bg-gray-800');
-//     contactBtn.removeClass('dark:bg-gray-800');
-// });
-
-// projectsBtn.click(function(){
-//     aboutPage.hide();
-//     skillsPage.hide();
-//     projectsPage.show();
-//     contact.hide();
-
-//     aboutBtn.removeClass('dark:bg-gray-800');
-//     skillsBtn.removeClass('dark:bg-gray-800');
-//     $(this).addClass('dark:bg-gray-800');
-//     contactBtn.removeClass('dark:bg-gray-800');
-// });
-
-// contactBtn.click(function(){
-//     aboutPage.hide();
-//     skillsPage.hide();
-//     projectsPage.hide();
-//     contact.show();
-
-//     aboutBtn.removeClass('dark:bg-gray-800');
-//     skillsBtn.removeClass('dark:bg-gray-800');
-//     projectsBtn.removeClass('dark:bg-gray-800');
-//     $(this).addClass('dark:bg-gray-800');
-// });
+$('#project1').load('<a href="https://web.facebook.com/">click here</a>');

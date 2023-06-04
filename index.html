@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
-<body style="background-image: url('img/bg-phpelephant2.jpg'); background-size: 100px 100px;">
-    <header id="header" data-target="intro-sec" class="hidden nav-btn hover:cursor-pointer bg-gray-800 py-4 shadow-xl">
+
+<body class="bg-[url('img/bg-phpelephant.jpg')] bg-[length:90px_90px]">
+    <header id="header" data-target="intro-sec" class="hidden nav-btn hover:cursor-pointer bg-gray-700 py-4 shadow-xl">
         <div class="md:flex gap-10 container mx-auto px-4">
             <div class="col-span-1 flex justify-center">
-                <img src="img/profile.jpg" alt="" class="rounded-full dark:bg-gray-500" style="width: 100px; height: 90px;">
+                <img src="img/profile.jpg" alt="" class="rounded-full  bg-gray-500" style="width: 100px; height: 90px;">
             </div>
             <div class="text-center lg:text-left col-span-6 md:w-full">
                 <h1 class="text-3xl text-white font-bold mt-4">JAY BAYRON</h1>
@@ -22,10 +24,10 @@
     </header>
 
     <div class="m-5 md:flex sm:flex">
-        <nav class="h-full p-3 space-y-2 w-60 dark:bg-gray-900 dark:text-gray-100 rounded-md shadow-md max-sm:hidden">
+        <nav id="navbar" class="h-full min-w-[25%] max-w-[25%] sticky top-5 p-3 space-y-2 w-60 bg-gray-700  text-gray-100 rounded-md shadow-md max-sm:hidden lg:hidden">
             <div class="divide-y divide-gray-700">
-                <ul class="pt-2 pb-4 space-y-1 text-sm">
-                    <li data-target="about-sec" id="about-btn" class="nav-btn hover:dark:bg-gray-800 dark:text-gray-50">
+                <ul class="pt-2 pb-2 space-y-1 text-sm">
+                    <li data-target="about-sec" id="about-btn" class="nav-btn hover:cursor-pointer hover:bg-gray-800  text-gray-50 border-b border-gray-900">
                         <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
@@ -33,7 +35,7 @@
                             <span>About</span>
                         </button>
                     </li>
-                    <li data-target="skills-sec" id="skills-btn" class="nav-btn hover:dark:bg-gray-800 dark:text-gray-50">
+                    <li data-target="skills-sec" id="skills-btn" class="nav-btn hover:cursor-pointer hover:bg-gray-800  text-gray-50 border-b border-gray-900">
                         <button type="button" class="nav-btn flex items-center p-2 space-x-3 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
@@ -41,15 +43,15 @@
                             <span>Skills</span>
                         </button>
                     </li>
-                    <li data-target="projects-sec" id="projects-btn" class="nav-btn hover:dark:bg-gray-800 dark:text-gray-50">
+                    <li data-target="projects-sec" id="projects-btn" class="nav-btn hover:cursor-pointer hover:bg-gray-800  text-gray-50 border-b border-gray-900">
                         <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                             </svg>
-                            <span>Projects</span>
+                            <span>Works</span>
                         </button>
                     </li>
-                    <li data-target="contact-sec" id="contact-btn" class="nav-btn hover:dark:bg-gray-800 dark:text-gray-50">
+                    <li data-target="contact-sec" id="contact-btn" class="nav-btn hover:cursor-pointer hover:bg-gray-800  text-gray-50 border-b border-gray-900">
                         <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
@@ -61,9 +63,9 @@
             </div>
         </nav>
 
-        <main class="md:mx-4 sm:ml-4 px-4 py-4 bg-gray-800 rounded-md shadow-md text-gray-300">
-            <section id="intro-sec" class="">
-                <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+        <main id="page" class="min-w-[70%] md:mx-4 sm:ml-4 px-4 py-4 bg-violet-900 rounded-md shadow-md text-gray-300">
+            <section id="intro-sec">
+                <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0  bg-slate-800">
                     <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-l-xl lg:rounded-l-xl md:rounded-none rounded-full mx-auto" src="img/profile.jpg" alt="" width="384" height="512">
                     <div class="pt-6 md:p-8 md:text-left space-y-4">
                         <blockquote class="text-center">
@@ -72,40 +74,156 @@
                             </p>
                         </blockquote>
                         <figcaption class="font-medium text-center pt-12">
-                            <div class="text-sky-500 dark:text-sky-400">
+                            <div class="text-sky-500  text-sky-400 text-3xl">
                                 JAY BAYRON
                             </div>
-                            <div class="text-slate-700 dark:text-slate-500">
+                            <div class="text-slate-700  text-slate-500">
                                 Web Developer, Philippines
                             </div>
                         </figcaption>
+                        <div class="flex">
+                            <button type="button" class="ml-auto underline text-sky-200">See more</button>
+                        </div>
                     </div>
                 </figure>
             </section>
             <section id="about-sec" class="hidden">
-                <h1>about</h1>
+                <h1 class="text-4xl font-bold">About Me</h1>
+                <div class="container mx-auto px-4 py-8">
+                    <p class="text-lg mb-6">Hello! I'm Jay Bayron, a passionate PHP developer with a love for creating elegant and efficient web solutions. I strive to deliver high-quality projects that meet clients' needs. Let's collaborate and bring your ideas to life!</p>
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-bold mb-2">Background</h2>
+                            <p class="mb-4">With years of experience and a strong educational foundation, I'm well-equipped to handle various PHP projects. I have a deep understanding of modern web development technologies and frameworks.</p>
+
+                            <h2 class="text-2xl font-bold mb-2">Values and Vision</h2>
+                            <p class="mb-4">Driven by passion and a commitment to excellence, I aim to deliver high-quality solutions that exceed client expectations. My vision is to make a positive impact in the industry and contribute to its growth.</p>
+                        </div>
+
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-bold mb-2">Achievements</h2>
+                            <ul class="list-disc pl-6">
+                                <li>Successfully completed complex PHP projects for renowned clients</li>
+                                <li>Received recognition for innovative solutions and efficient code practices</li>
+                                <li>Continuously updating skills to stay on top of the latest industry trends</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
             <section id="skills-sec" class="hidden">
-                <h1>skills</h1>
+                <h1 class="text-4xl font-bold mb-4">Skills</h1>
+                <div class="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 flex gap-5 w-full">
+                    <img title="html" src="https://skillicons.dev/icons?i=html&theme=dark&perline=30" class="h-44" />
+                    <img title="php" src="https://skillicons.dev/icons?i=php&theme=dark&perline=30" class="h-44" />
+                    <img title="mysql" src="https://skillicons.dev/icons?i=mysql&theme=dark&perline=30" class="h-44" />
+                    <img title="jquery" src="https://skillicons.dev/icons?i=jquery&theme=dark&perline=30" class="h-44" />
+                    <img title="tailwind" src="https://skillicons.dev/icons?i=tailwindcss&theme=dark&perline=30" class="h-44" />
+                    <img title="css" src="https://skillicons.dev/icons?i=css&theme=dark&perline=30" class="h-44" />
+                    <img title="javascript" src="https://skillicons.dev/icons?i=javascript&theme=dark&perline=30" class="h-44" />
+                    <img title="laravel" src="https://skillicons.dev/icons?i=laravel&theme=dark&perline=30" class="h-44" />
+                </div>
             </section>
-            <section id="projects-sec"  class="hidden">
-                <h1>projects</h1>
+            <section id="projects-sec" class="hidden">
+                <h1 class="text-4xl font-bold mb-4">Works</h1>
+                <div class="gallery mx-auto border-2 rounded m-5 bg-white relative" style="width:750px; height: 500px;">
+                    <div class="top flex p-2 border-b select-none">
+                        <div class="heading text-gray-800 w-full pl-3 font-semibold my-auto"></div>
+                        <div class="buttons ml-auto flex text-gray-600 mr-1">
+                            <svg action="prev" class="w-7 border-2 rounded-l-lg p-1 cursor-pointer border-r-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path action="prev" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            <svg action="next" class="w-7 border-2 rounded-r-lg p-1 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path action="next" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="content-area w-full overflow-hidden">
+                        <div class="platform shadow-xl h-full flex">
+                            <!-- frame start -->
+                            <div class="each-frame border-box flex-none h-full" title="Point of Sale and Inventory (Menu)"> <!-- title shows in top -->
+                                <!-- this is full editable area -->
+                                <div class="main flex w-full p-8">
+                                    <div class="sub">
+                                        <img class="w-full" src="img/menuPOS.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- frame end -->
+
+                            <div class="each-frame border-box flex-none h-full" title="Dental Clinic Appointment Management"> <!-- title shows in top -->
+                                <!-- this is full editable area -->
+                                <div class="main flex w-full p-8">
+                                    <div class="sub">
+                                        <img class="w-full" src="img/menuPOS.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- frame end -->
+
+                            <div class="each-frame border-box flex-none h-full" title="Ecommerce"> <!-- title shows in top -->
+                                <!-- this is full editable area -->
+                                <div class="main flex w-full p-8">
+                                    <div class="sub w-4/6 my-auto">
+                                        <img class="w-full p-8" src="" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- frame end -->
+
+                            <div class="each-frame border-box flex-none h-full" title="Chat Application"> <!-- title shows in top -->
+                                <!-- this is full editable area -->
+                                <div class="main flex w-full p-8">
+                                    <div class="sub w-4/6 my-auto">
+                                        <img class="w-full p-8" src="" alt="">
+                                    </div>
+                                    <div class="sub w-full my-auto">
+                                        <div class="head text-3xl font-bold mb-4">Controls Validation</div>
+                                        <div class="long-text text-lg">lorem epsum.</div>
+                                        <div class="goto border border-gray-400 text-sm font-semibold inline-block mt-2 p-1 px-2 rounded cursor-pointer" action="goto" goto="0">Goto First Frame</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .platform {
+                        position: relative;
+                        transition: right 0.3s;
+                    }
+                </style>
             </section>
-            <section id="contact-sec"  class="hidden">
-                <h1>contact</h1>
+            <section id="contact-sec" class="hidden">
+                <h1 class="text-4xl font-bold mb-4">Contact Me</h1>
+                <div class="grid lg:grid-cols-5 md:grid-cols-5 grid-cols-2 flex gap-5 w-full">
+                    <a href="https://www.linkedin.com/in/jay-camanian-bayron-4a8648191/" target="_blank">
+                        <img rel="linkedin" title="linkedin" src="https://skillicons.dev/icons?i=linkedin&theme=dark" class="h-44" />
+                    </a>
+                    <a href="https://github.com/jaybayron9" target="_blank">
+                        <img rel="github" title="github" src="https://skillicons.dev/icons?i=github&theme=dark" class="h-44" />
+                    </a>
+                    <a href="https://web.facebook.com/jay.bayron900" target="_blank">
+                        <img rel="facebook" title="facebook" src="https://skillicons.dev/icons?i=instagram&theme=dark" class="h-44" />
+                    </a>
+                    <a href="https://www.instagram.com/deviecue" target="_blank">
+                        <img rel="Instagram" title="Instagram" src="https://skillicons.dev/icons?i=instagram&theme=dark" class="h-44" />
+                    </a>
+                </div>
             </section>
         </main>
     </div>
 
-    <button id="navbar-btn" type="button" title="navbar" class="md:hidden absolute top-0 m-7 right-0 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-full shadow-md">
+    <button id="navbar-btn" type="button" title="navbar" class="md:hidden absolute top-0 right-0 z-20  m-7 bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-full shadow-md">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
     </button>
 
-    <div id="navbar-widget" class="hidden lg:hidden absolute sticky bottom-0 w-full z-2 p-3 space-y-2 w-60 dark:bg-gray-900 dark:text-gray-100 shadow-md">
+    <div id="navbar-widget" class="hidden lg:hidden absolute sticky bottom-0 w-full z-2 p-3 space-y-2 w-60  bg-gray-900  text-gray-100 shadow-md">
         <ul class="pt-2 pb-4 space-y-1 text-sm">
-            <li data-target="about-sec" class="nav-btn hover:dark:bg-gray-800 dark:bg-gray-800 dark:text-gray-50">
+            <li data-target="about-sec" class="nav-btn hover: bg-gray-800  bg-gray-800  text-gray-50">
                 <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
@@ -113,7 +231,7 @@
                     <span>About</span>
                 </button>
             </li>
-            <li data-target="skills-sec" class="nav-btn hover:dark:bg-gray-800 dark:bg-gray-800 dark:text-gray-50">
+            <li data-target="skills-sec" class="nav-btn hover: bg-gray-800  bg-gray-800  text-gray-50">
                 <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
@@ -121,7 +239,7 @@
                     <span>Skills</span>
                 </button>
             </li>
-            <li data-target="projects-sec" class="nav-btn hover:dark:bg-gray-800 dark:bg-gray-800 dark:text-gray-50">
+            <li data-target="projects-sec" class="nav-btn hover: bg-gray-800  bg-gray-800  text-gray-50">
                 <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
@@ -129,7 +247,7 @@
                     <span>projects</span>
                 </button>
             </li>
-            <li data-target="contact-sec" class="nav-btn hover:dark:bg-gray-800 dark:bg-gray-800 dark:text-gray-50">
+            <li data-target="contact-sec" class="nav-btn hover: bg-gray-800  bg-gray-800  text-gray-50">
                 <button type="button" class="flex items-center p-2 space-x-3 rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
@@ -148,4 +266,5 @@
 
     <script type="text/javascript" src="script.js"> </script>
 </body>
+
 </html>
